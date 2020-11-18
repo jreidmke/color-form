@@ -1,10 +1,12 @@
-const Box = ({height, width, color}) => {
-    console.log(height)
-    console.log(width)
-    console.log(color)
+const Box = ({id, height, width, color, handleRemove}) => {
+        const remove = () => handleRemove(id); //handleRemove is a callback that calls remove via ID (a function in boxlist)
+        return(
+                <div>
+                        <div style={{height: height, width:width, backgroundColor:color}}/>
+                        <button onClick={remove}>X</button> {/* a button is also passed in that allows for remove to be called. This triggers handleRemove(id) which removes the div from the DOM. */}
+                </div>
+        )
 
-	return(
-        <div style={{height: height, width:width, backgroundColor:color}}/>
-)}
+}
 
 export default Box;
