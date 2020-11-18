@@ -9,8 +9,6 @@ function App() {
       <Box height='100px' width='100px' color='red' />
       <Box height='100px' width='100px' color='blue' />
       <Box height='100px' width='100px' color='green' />
-
-
     </div>
   );
 }
