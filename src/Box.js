@@ -1,10 +1,11 @@
-import { v4 as uuidv4 } from 'uuid';
 
-const Box = () => {
+const Box = ({id, handleRemove, height, width, backgroundColor}) => {
         const remove = () => handleRemove(id);
 
         return(
-                <div style={{height:'100px', width:'100px', backgroundColor:'red'}}></div>
+                <div key={id} style={{height:height, width:width, backgroundColor:backgroundColor}}>
+                        <button onClick={remove}>X</button>
+                </div>
         )
 }
 
