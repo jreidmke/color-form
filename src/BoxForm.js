@@ -3,29 +3,25 @@ import { v4 as uuidv4 } from 'uuid';
 
 const BoxForm = ({createBox}) => {
 
-    const INITIAL_STATE = {
+    const INITIAL_STATE = { //put this here to make it easier to revert back to empty form
         height: "",
         width: "",
         backgroundColor: ""
     };
 
-    const [formData, setFormData] = useState({
-        height: "",
-        width: "",
-        backgroundColor: ""
-    });
+    const [formData, setFormData] = useState(INITIAL_STATE); //set formData as blank form
 
-    const handleChange = (evt) => {
-        const { name, value } = evt.target;
-        setFormData(formData => ({
-            ...formData,
-            [name]: value
+    const handleChange = (evt) => {//generic handle function that sets the formData property to the value noticed in the change (as the user typed it in)
+        const { name, value } = evt.target;//destructure name and value from evt.target object
+        setFormData(formData => ({//place formData in a callback to prevent it from updating immeaditley
+            ...formData,//spread formData
+            [name]: value//assign prop (name got out of input attribute) value.
         }));
     };
 
-    const input = (evt) => {
-        evt.preventDefault();
-        createBox({...formData, id: uuidv4()});
+    const input = (evt) => {//what happens on submit
+        evt.preventDefault();//first, prevent page from refreshing
+        createBox({...formData, id: uuidv4()});//OK, this is the crazy part. So right now, createBox is just a prop. See, it's destructured up top. So what we do is take formData from state, and pass it in with the id set to a uuid ID. 
         setFormData(INITIAL_STATE);
     }
 
