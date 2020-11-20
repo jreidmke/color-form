@@ -1,4 +1,10 @@
+const Box = () => {
+        return(
+                <div style={{height:'100px', width:'100px', backgroundColor:'red'}}></div>
+        )
+}
 
+export default Box;
 
 // const Box = ({id, height, width, color, handleRemove}) => {
 //         const remove = () => handleRemove(id); //handleRemove is a callback that calls remove via ID (a function in boxlist)

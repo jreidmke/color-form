@@ -1,5 +1,26 @@
+import React, { useState } from 'react';
+import Box from './Box';
 
+const Boxes = () => {
+    const [boxes, setBoxes] = useState([]);
 
+    const addBox = (box) => {
+        setBoxes([...boxes, box]);
+    }
+
+    const makeBoxes = boxes.map(box => (
+        <Box/>
+    ));
+
+    return(
+        <div>
+            <button onClick={addBox}>Add Box</button>
+            {makeBoxes}
+        </div>
+    )
+}
+
+export default Boxes;
 
 // import { useState } from 'react';
 // import Box from './Box';
