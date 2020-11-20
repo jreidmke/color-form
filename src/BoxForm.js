@@ -22,19 +22,20 @@ const BoxForm = ({createBox}) => {
     const input = (evt) => {//what happens on submit
         evt.preventDefault();//first, prevent page from refreshing
         createBox({...formData, id: uuidv4()});//OK, this is the crazy part. So right now, createBox is just a prop. See, it's destructured up top. So what we do is take formData from state, and pass it in with the id set to a uuid ID. This will not do ANYTHING on this page! But it will do something in Boxes.js.
-        setFormData(INITIAL_STATE);
+        setFormData(INITIAL_STATE);//reset formDate state.
     }
+
 
     return (
         <div>
-          <form onSubmit={input}>
+          <form onSubmit={input}> {/** onSubmit, input function will be called*/}
             <div>
               <label htmlFor="height">Height</label>
               <input
-                onChange={handleChange}
+                onChange={handleChange} /* any change will be detected by handleChange function */
                 type="text"
                 name="height"
-                value={formData.height}
+                value={formData.height} /**formData set to value stared in state */
                 id="height"
               />
             </div>
@@ -58,7 +59,7 @@ const BoxForm = ({createBox}) => {
                 id="backgroundColor"
               />
             </div>
-            <button id="newBoxButton">Add a new box!</button>
+            <button id="newBoxButton">New Box</button>
           </form>
         </div>
       );
