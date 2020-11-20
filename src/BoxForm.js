@@ -21,7 +21,7 @@ const BoxForm = ({createBox}) => {
 
     const input = (evt) => {//what happens on submit
         evt.preventDefault();//first, prevent page from refreshing
-        createBox({...formData, id: uuidv4()});//OK, this is the crazy part. So right now, createBox is just a prop. See, it's destructured up top. So what we do is take formData from state, and pass it in with the id set to a uuid ID. 
+        createBox({...formData, id: uuidv4()});//OK, this is the crazy part. So right now, createBox is just a prop. See, it's destructured up top. So what we do is take formData from state, and pass it in with the id set to a uuid ID. This will not do ANYTHING on this page! But it will do something in Boxes.js.
         setFormData(INITIAL_STATE);
     }
 

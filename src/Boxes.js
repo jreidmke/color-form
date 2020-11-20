@@ -26,7 +26,7 @@ const Boxes = () => {
 
     return(
         <div>
-             <BoxForm createBox={addBox} />
+             <BoxForm createBox={addBox} /> {/**HERE!!! WE GIVE THE createBox PROP FROM BOXFORM A VALUE OF OUR addBox function. So remember, createBox passes in our formData state which is filled with KVP's of box properties. It adds it from that state (form state) to this state (box state). So at once you are using one state to set another. Phew */}
             {makeBoxes}
         </div>
     )
