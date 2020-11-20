@@ -14,12 +14,12 @@ const Boxes = () => {
     }
 
     const makeBoxes = boxes.map(box => (
-        <Box key={box.id} id={box.id} height='100px' width='100px' backgroundColor='red' handleRemove={removeBox}/>
+        <Box key={box.id} id={box.id} height={box.height} width={box.width} backgroundColor={box.backgroundColor} handleRemove={removeBox}/>
     ));
 
     return(
         <div>
-             <NewBoxForm createBox={add} />
+             <BoxForm createBox={addBox} />
             {makeBoxes}
         </div>
     )

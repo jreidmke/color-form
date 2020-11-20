@@ -31,7 +31,7 @@ const BoxForm = ({createBox}) => {
 
     return (
         <div>
-          <form onSubmit={gatherInput}>
+          <form onSubmit={input}>
             <div>
               <label htmlFor="height">Height</label>
               <input
