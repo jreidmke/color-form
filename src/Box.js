@@ -1,4 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const Box = () => {
+        const remove = () => handleRemove(id);
+
         return(
                 <div style={{height:'100px', width:'100px', backgroundColor:'red'}}></div>
         )
