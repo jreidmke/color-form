@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Box from './Box';
-import { v4 as uuidv4 } from 'uuid';
+import BoxForm from './BoxForm';
 
 const Boxes = () => {
     const [boxes, setBoxes] = useState([]);
@@ -14,12 +14,12 @@ const Boxes = () => {
     }
 
     const makeBoxes = boxes.map(box => (
-        <Box key={uuidv4()} id={uuidv4()} height='100px' width='100px' backgroundColor='red' handleRemove={removeBox}/>
+        <Box key={box.id} id={box.id} height='100px' width='100px' backgroundColor='red' handleRemove={removeBox}/>
     ));
 
     return(
         <div>
-            <button onClick={addBox}>Add Box</button>
+             <NewBoxForm createBox={add} />
             {makeBoxes}
         </div>
     )
