@@ -4,6 +4,7 @@ const Box = ({id, handleRemove, height, width, backgroundColor}) => {
         return(
                 <div key={id} style={{height:height, width:width, backgroundColor:backgroundColor}}>
                         <button onClick={remove}>X</button>
+                        <h4>{backgroundColor}</h4>
                 </div>
         )
 }
